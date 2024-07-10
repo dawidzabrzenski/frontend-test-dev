@@ -1,0 +1,15 @@
+@use "../utils/mixins" as *;
+@use "./colors" as *;
+
+@include google-fonts;
+
+$font-small: 2rem;
+$font-medium: 4rem;
+$font-large: 6rem;
+$font-huge: 8rem;
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+}

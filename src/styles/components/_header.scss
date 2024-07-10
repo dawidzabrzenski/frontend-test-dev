@@ -1,0 +1,29 @@
+@use "../base/colors" as *;
+@use "../base/typography" as *;
+
+.header {
+  width: 100vw;
+  height: 10.5rem;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+
+  &__img {
+    background-color: $logo-background-color;
+    width: 6rem;
+    border-radius: 8rem;
+    padding: 1.2rem;
+  }
+
+  &__text {
+    font-size: $font-small;
+    font-weight: 400;
+
+    strong {
+      font-size: inherit;
+      font-weight: 700;
+    }
+  }
+}
