@@ -3,13 +3,15 @@
 
 @include google-fonts;
 
-$font-small: 2rem;
-$font-medium: 4rem;
-$font-large: 6rem;
-$font-huge: 8rem;
+$font-small: 1rem;
+$font-medium: 2.2rem;
+$font-large: 3.2rem;
+$font-huge: 6rem;
+
+$title-shadow: 1px 1px 1px black;
 
 body {
   font-family: "Open Sans", sans-serif;
-  line-height: 1.6;
+  line-height: 1.2;
   color: $text-color;
 }

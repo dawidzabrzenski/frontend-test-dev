@@ -1,19 +1,51 @@
+@use "../base/colors" as *;
+@use "../base/typography" as *;
+
+.section-header {
+  height: 16vh;
+  background-color: $background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  &__title {
+    position: relative;
+    font-size: $font-large;
+
+    font-weight: 400;
+    text-shadow: $title-shadow;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1rem;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background-color: $text-color;
+    }
+  }
+}
+
 .section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   height: 100vh;
-}
 
-.s1 {
-  background-color: green;
-}
+  &__element {
+    background-color: $background-color;
+  }
 
-.s2 {
-  background-color: red;
-}
+  .s2 {
+    background-color: red;
+  }
 
-.s3 {
-  background-color: blue;
-  grid-column: 1/-1;
+  .s3 {
+    background-color: blue;
+    grid-column: 1/-1;
+    height: 40vh;
+  }
 }
