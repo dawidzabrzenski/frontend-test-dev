@@ -20,17 +20,25 @@ function BulletPointList() {
 
   return (
     <section className="list">
-      <h2>BLOK PIERWSZY</h2>
-      <div>
+      <h3 className="block-title">BLOK PIERWSZY</h3>
+      <div className="list__container">
         {options.map((option) => (
-          <div>
+          <div className="list__container__radio">
             <input
+              className="list__container__radio__element"
               name="options"
               type="radio"
               value={option.value}
               key={option.value}
-              // checked={value === opt}
+              checked={value === option.value}
+              onChange={(e) => setValue(e.target.value)}
             ></input>
+            <label
+              className="list__container__radio__label"
+              htmlFor={option.value}
+            >
+              {option.label}
+            </label>
           </div>
         ))}
       </div>

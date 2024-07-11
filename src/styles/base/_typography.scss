@@ -4,14 +4,18 @@
 @include google-fonts;
 
 $font-small: 1rem;
+$font-small-medium: 1.6rem;
 $font-medium: 2.2rem;
+$font-medium-large: 2.8rem;
 $font-large: 3.2rem;
 $font-huge: 6rem;
 
 $title-shadow: 1px 1px 1px black;
 
+$font-default: "Open Sans", sans-serif;
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: $font-default;
   line-height: 1.2;
   color: $text-color;
 }

@@ -2,11 +2,59 @@
 @use "../base/typography" as *;
 
 .list {
-  padding: 2rem;
-
-  & h2 {
-    font-size: $font-medium;
-    font-weight: 700;
-    text-shadow: $title-shadow;
+  .block-title {
+    margin-bottom: 3rem;
   }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+
+    &__radio {
+      display: flex;
+      gap: 1.4rem;
+      align-items: center;
+      font-size: $font-medium-large;
+      font-weight: 300;
+
+      &__element {
+        appearance: none;
+        background-color: #000;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        width: 2.2rem;
+        height: 2.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        &:checked::before {
+          content: "";
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          background-color: #fff;
+          position: absolute;
+        }
+
+        &:checked + label {
+          font-weight: 700;
+        }
+      }
+
+      &__label {
+        color: $text-content-color-light;
+      }
+    }
+  }
+}
+
+.block-title {
+  font-size: $font-medium;
+  font-weight: 700;
+  text-shadow: $title-shadow;
+  text-transform: uppercase;
 }
