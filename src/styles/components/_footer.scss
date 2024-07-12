@@ -1,0 +1,45 @@
+@use "../base/colors" as *;
+@use "../base/typography" as *;
+@use "../utils/mixins" as *;
+
+.footer {
+  height: 13.5rem;
+  background-color: $footer-background-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-top: 2px solid #0a0b0d;
+}
+
+#toggle {
+  display: none;
+}
+
+#toggle:checked + .container {
+  right: 0px;
+}
+
+.container {
+  width: 50vw;
+
+  position: absolute;
+  bottom: 50px;
+  right: -50rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+  transition: right 0.5s ease;
+}
+
+labeasdl {
+  font-size: $font-medium;
+  background-color: black;
+  color: white;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+label:focus {
+  outline: none;
+}

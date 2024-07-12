@@ -1,19 +1,19 @@
 import BulletPointList from "./BulletPointList";
-import FunctionButtonsList from "./FunctionButtonList";
+import FunctionButtonList from "./FunctionButtonList";
 import TextContent from "./TextContent";
 
 function MainSection() {
   return (
     <main>
       <div className="section-header">
-        <h className="section-header__title">Nagłówek H1</h>
+        <h1 className="section-header__title">Nagłówek H1</h1>
       </div>
       <section className="section">
-        <div>
+        <div className="bullet-point-box">
           <BulletPointList />
         </div>
-        <div>
-          <FunctionButtonsList />
+        <div className="function-button-box">
+          <FunctionButtonList />
         </div>
         <div className="text-content-box">
           <TextContent />

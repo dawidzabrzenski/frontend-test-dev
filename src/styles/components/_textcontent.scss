@@ -1,5 +1,28 @@
-.title-wrap {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+@use "../base/colors" as *;
+@use "../base/typography" as *;
+@use "../utils/mixins" as *;
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @include respond(tablet) {
+    max-width: 33.3vw;
+    align-items: center;
+    gap: 6rem;
+  }
+
+  &__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%; // Dodane, aby ograniczyć szerokość elementu
+  }
+
+  &__main {
+    font-size: $font-small-medium;
+    color: $text-content-color-darker;
+    text-align: center;
+  }
 }

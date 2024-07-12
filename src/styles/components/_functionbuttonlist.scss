@@ -1,5 +1,6 @@
 @use "../base/typography" as *;
 @use "../base/colors" as *;
+@use "../utils/mixins" as *;
 
 .function-button-list {
   height: 100%;
@@ -7,11 +8,24 @@
   flex-direction: column;
   align-items: end;
   justify-content: space-between;
+  padding-bottom: 4rem;
+  gap: 2rem;
+
+  @include respond(tablet) {
+    gap: 6rem;
+    align-items: center;
+    justify-content: start;
+  }
 
   &__buttons {
     gap: 1rem;
     display: flex;
     flex-direction: column;
+
+    @include respond(tablet) {
+      flex-direction: row;
+      gap: 4rem;
+    }
 
     &__button {
       background-color: $background-color;
