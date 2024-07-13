@@ -1,38 +1,39 @@
-import { useState } from "react";
+import React from "react";
 
-function BulletPointList() {
+function BulletPointList({ dispatch }) {
   const options = [
     {
-      value: "firstOption",
+      value: "1",
       label: "Opcja pierwsza",
     },
     {
-      value: "secondOption",
+      value: "2",
       label: "Opcja druga",
     },
     {
-      value: "randomOption",
+      value: "3",
       label: "Opcja losowa",
     },
   ];
 
-  const [value, setValue] = useState(null);
+  const handleChange = (event) => {
+    const selectedValue = event.target.value;
+    dispatch({ type: "setCurrentOption", payload: selectedValue });
+  };
 
   return (
     <section className="list">
       <h3 className="block-title">BLOK PIERWSZY</h3>
       <div className="list__container">
         {options.map((option) => (
-          <div className="list__container__radio">
+          <div className="list__container__radio" key={option.value}>
             <input
               className="list__container__radio__element"
               name="options"
               type="radio"
               value={option.value}
-              key={option.value}
-              checked={value === option.value}
-              onChange={(e) => setValue(e.target.value)}
-            ></input>
+              onChange={handleChange}
+            />
             <label
               className="list__container__radio__label"
               htmlFor={option.value}

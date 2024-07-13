@@ -5,24 +5,24 @@
 .text-content {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-
-  @include respond(tablet) {
-    max-width: 33.3vw;
-    align-items: center;
-    gap: 6rem;
-  }
+  align-items: center;
+  gap: 2rem;
 
   &__title {
+    max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 100%; // Dodane, aby ograniczyć szerokość elementu
+    text-align: center;
   }
 
   &__main {
-    font-size: $font-small-medium;
-    color: $text-content-color-darker;
+    font-size: $font-medium-large;
+    color: $text-content-color;
     text-align: center;
+
+    @include respond(tablet) {
+      font-size: $font-small-medium;
+    }
   }
 }

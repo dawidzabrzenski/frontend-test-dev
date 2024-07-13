@@ -2,7 +2,7 @@ import BulletPointList from "./BulletPointList";
 import FunctionButtonList from "./FunctionButtonList";
 import TextContent from "./TextContent";
 
-function MainSection() {
+function MainSection({ dispatch, state, data, setData }) {
   return (
     <main>
       <div className="section-header">
@@ -10,13 +10,17 @@ function MainSection() {
       </div>
       <section className="section">
         <div className="bullet-point-box">
-          <BulletPointList />
+          <BulletPointList dispatch={dispatch} />
         </div>
         <div className="function-button-box">
-          <FunctionButtonList />
+          <FunctionButtonList
+            dispatch={dispatch}
+            data={data}
+            setData={setData}
+          />
         </div>
         <div className="text-content-box">
-          <TextContent />
+          <TextContent content={state.items} text={state.text} />
         </div>
       </section>
     </main>

@@ -1,15 +1,16 @@
-function TextContent() {
+function TextContent({ content, text }) {
   return (
     <article className="text-content">
       <h3 className="text-content__title block-title ">
-        Lorem ipsasdfadsfadsfadsfasdfadsfasdfasdffasdsadfasdfasfdasfdasdfasdum
+        BLOK Z DŁUGĄ NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE PRZY ODPOWIEDNIEJ DŁUGOŚCI
       </h3>
-      <p className="text-content__main">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-        tempore quaerat, odit autem hic, natus aperiam accusantium iste sunt
-        fugiat aspernatur veniam voluptate quos cumque, recusandae nemo impedit
-        in perspiciatis.
-      </p>
+
+      <div className="text-content__main">
+        {content.length === 0 && <p className="text-content__main">{text}</p>}
+        {content.map((item) => (
+          <ol key={item.text}>{item.text}</ol>
+        ))}
+      </div>
     </article>
   );
 }

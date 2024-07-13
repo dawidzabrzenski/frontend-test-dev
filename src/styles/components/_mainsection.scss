@@ -2,78 +2,79 @@
 @use "../base/typography" as *;
 @use "../utils/mixins" as *;
 
-.section-header {
-  height: 15.4vh;
+main {
+  min-height: calc(100vh - 16rem);
   background-color: $background-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  &__title {
-    position: relative;
-    font-size: $font-large;
-    font-weight: 300;
-    text-shadow: $title-shadow;
+  .section-header {
+    height: 15.4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -1rem;
-      left: 10%;
-      width: 80%;
-      height: 1px;
-      background-color: $text-color;
+    &__title {
+      position: relative;
+      font-size: $font-large;
+      font-weight: 300;
+      text-shadow: $title-shadow;
+
+      @include respond(notebook) {
+        font-size: $font-huge;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2rem;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background-color: $text-color;
+      }
     }
   }
-}
 
-.section {
-  height: 70vh;
-  background-color: $background-color;
-  padding: 2rem;
-  gap: 6rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 30% 70%;
-
-  @include respond(tablet) {
-    padding: 6rem;
-    height: 75vh;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  }
-
-  @include respond(big-desktop) {
-    height: 60vh;
-  }
-
-  .bullet-point-box {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+  .section {
+    max-width: 100vw;
+    padding: 2rem;
+    gap: 8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 35% 65%;
 
     @include respond(tablet) {
+      padding: 6rem;
+      grid-template-columns: repeat((3, minmax(0, 1fr)));
+    }
+
+    .bullet-point-box {
       grid-column: 1 / 2;
-      grid-row: 1 / -1;
+      grid-row: 1 / 2;
+
+      @include respond(tablet) {
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+      }
     }
-  }
 
-  .function-button-box {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-
-    @include respond(tablet) {
+    .function-button-box {
       grid-column: 2 / 3;
-      grid-row: 1 / -1;
+      grid-row: 1 / 2;
+
+      @include respond(tablet) {
+        grid-column: 2;
+        grid-row: 1 / -1;
+      }
     }
-  }
 
-  .text-content-box {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
+    .text-content-box {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
 
-    @include respond(tablet) {
-      grid-column: 3 / 4;
-      grid-row: 1 / -1;
+      @include respond(tablet) {
+        grid-column: 3;
+        grid-row: 1 / -1;
+      }
     }
   }
 }

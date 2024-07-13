@@ -1,9 +1,11 @@
 function FooterLogo() {
   return (
-    <div className="footer-logo">
-      <p>CSS</p>
-      <p>IS</p>
-      <p>AWESOME</p>
+    <div className="footer-container">
+      <div className="footer-container__logo">
+        <p>CSS</p>
+        <p>IS</p>
+        <p>AWESOME</p>
+      </div>
     </div>
   );
 }
